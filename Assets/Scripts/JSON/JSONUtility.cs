@@ -29,7 +29,7 @@ public class JSONUtility : MonoBehaviour
             List<GuessWord> wordDataList = ParseWordList(wordlists[i].text);
             foreach (GuessWord data in wordDataList)
             {
-                wordAssetMap.Add(data.word, wordAssetPrefabs[i]);
+                wordAssetMap.Add(data.translation, wordAssetPrefabs[i]);
             }
         }
     }

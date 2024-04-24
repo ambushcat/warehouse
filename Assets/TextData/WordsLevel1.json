@@ -1,24 +1,31 @@
 {
     "list": [
         {
-            "word":"help",
-            "translation":"help"
+            "translation":"Werkplek"
         },
         {
-            "word":"world",
-            "translation":"wereld"
+            "translation":"Kantine"
         },
         {
-            "word":"chicken",
-            "translation":"kip"
+            "translation":"Pauze"
         },
         {
-            "word":"sandwich",
-            "translation":"boterham"
+            "translation":"Werktijden"
         },
         {
-            "word":"peanutbutter",
-            "translation":"pindakaas"
+            "translation":"Inklokken"
+        },
+        {
+            "translation":"Uitklokken"
+        },
+        {
+            "translation":"Vloer"
+        },
+        {
+            "translation":"Kleding"
+        },
+        {
+            "translation":"Collega"
         }
     ]
 }
