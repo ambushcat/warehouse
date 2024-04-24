@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class GuessWord
 {
-    public string word;
     public string translation;
 }
 
