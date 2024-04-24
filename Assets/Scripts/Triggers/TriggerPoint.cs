@@ -4,14 +4,21 @@ public class TriggerPoint : MonoBehaviour
 {
     [SerializeField]
     public GameObject triggerObject;
+    [SerializeField]
+    public bool isColliderEnabled = true;
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        if (isColliderEnabled)
         {
-            ITriggerableObject triggerComponent = triggerObject.GetComponent<ITriggerableObject>();
-            if (triggerComponent != null)
+            if (collision.gameObject.tag == "Ball")
             {
-                triggerComponent.Trigger();
+                ITriggerableObject[] triggerComponents = triggerObject.GetComponents<ITriggerableObject>();
+                foreach (var triggerComponent in triggerComponents)
+                {
+                    triggerComponent.Trigger();
+                }
+                isColliderEnabled = false;
             }
         }
     }

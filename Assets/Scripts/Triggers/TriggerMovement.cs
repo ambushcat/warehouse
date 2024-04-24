@@ -4,7 +4,7 @@ public class TriggerMovement : MonoBehaviour, ITriggerableObject
 {
     [SerializeField]
     Transform targetPosition;
-    private bool isTriggered;
+    private bool isTriggered = false;
     public void Trigger()
     {
         isTriggered = true;
