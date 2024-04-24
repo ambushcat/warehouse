@@ -4,6 +4,9 @@ public class TriggerMovement : MonoBehaviour, ITriggerableObject
 {
     [SerializeField]
     Transform targetPosition;
+    [SerializeField]
+    GameObject objectToMove;
+
     private bool isTriggered = false;
     public void Trigger()
     {
@@ -14,7 +17,11 @@ public class TriggerMovement : MonoBehaviour, ITriggerableObject
     {
         if (isTriggered)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, Time.deltaTime);
+            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, targetPosition.position, Time.deltaTime);
+            if(objectToMove.transform.position == targetPosition.position)
+            {
+                isTriggered=false;
+            }
         }
     }
 }
