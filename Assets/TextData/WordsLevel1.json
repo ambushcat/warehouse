@@ -1,0 +1,24 @@
+{
+    "list": [
+        {
+            "word":"help",
+            "translation":"help"
+        },
+        {
+            "word":"world",
+            "translation":"wereld"
+        },
+        {
+            "word":"chicken",
+            "translation":"kip"
+        },
+        {
+            "word":"sandwich",
+            "translation":"boterham"
+        },
+        {
+            "word":"peanutbutter",
+            "translation":"pindakaas"
+        }
+    ]
+}
