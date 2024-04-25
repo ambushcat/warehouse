@@ -339,6 +339,7 @@ MonoBehaviour:
   objectiveName: Put ball on platform
   completed: 0
   active: 1
+  isBlinking: 0
 --- !u!114 &397685814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,6 +400,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objective: {fileID: 397685813}
   objectiveSystem: {fileID: 623665682}
+--- !u!1 &548358909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548358910}
+  - component: {fileID: 548358911}
+  m_Layer: 0
+  m_Name: TriggerObjective0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &548358910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548358909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1633770099}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &548358911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548358909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4042d542c63ebbf43a7c195e7f604f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objective: {fileID: 1382934182}
+  objectiveSystem: {fileID: 623665682}
 --- !u!1 &623665681
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives:
+  - {fileID: 1382934182}
   - {fileID: 397685813}
   text: {fileID: 1948436060}
 --- !u!4 &623665683
@@ -460,6 +508,7 @@ GameObject:
   - component: {fileID: 769787322}
   - component: {fileID: 769787326}
   - component: {fileID: 769787327}
+  - component: {fileID: 769787328}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -592,6 +641,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470bed16047c15545aeb13447091dedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &769787328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769787321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55af4a3124022924a87d2154af37c18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerObject: {fileID: 548358909}
+--- !u!1 &1382934181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382934183}
+  - component: {fileID: 1382934182}
+  m_Layer: 0
+  m_Name: Objective0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1382934182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382934181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6110f89aa1b2dfb41b4a333b770d221f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveName: Pickup Ball
+  completed: 0
+  active: 1
+  isBlinking: 0
+--- !u!4 &1382934183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382934181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1442113194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -806,6 +916,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 478996972}
+  - {fileID: 548358910}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1760894636 stripped
@@ -1017,3 +1128,4 @@ SceneRoots:
   - {fileID: 623665683}
   - {fileID: 769787325}
   - {fileID: 1633770099}
+  - {fileID: 1382934183}

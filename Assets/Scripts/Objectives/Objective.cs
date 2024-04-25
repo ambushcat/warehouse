@@ -12,6 +12,8 @@ public class Objective : MonoBehaviour
 
     [SerializeField]
     public bool active = false;
+    [SerializeField]
+    public bool isBlinking = false;
 
 
     public void Complete()
@@ -29,19 +31,32 @@ public class Objective : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("Blink");
+        if (isBlinking)
+        {
+            StartCoroutine("Blink");
+        }
+
     }
 
     public void Blink()
     {
         if (active)
         {
-            Color lerpColorRed = Color.Lerp(Color.white, Color.red, Time.time);
-            gameObject.GetComponent<MeshRenderer>().material.color = lerpColorRed;
-        } else
+            if (gameObject.GetComponent<MeshRenderer>() != null)
+            {
+                Color lerpColorRed = Color.Lerp(Color.white, Color.red, Time.time);
+                gameObject.GetComponent<MeshRenderer>().material.color = lerpColorRed;
+            }
+
+        }
+        else
         {
-            Color lerpColorWhite = Color.Lerp(Color.red, Color.white, Time.time);
-            gameObject.GetComponent<MeshRenderer>().material.color = lerpColorWhite;
+            if (gameObject.GetComponent<MeshRenderer>() != null)
+            {
+                Color lerpColorWhite = Color.Lerp(Color.red, Color.white, Time.time);
+                gameObject.GetComponent<MeshRenderer>().material.color = lerpColorWhite;
+            }
+
         }
     }
 }
