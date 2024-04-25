@@ -967,6 +967,9 @@ GameObject:
   m_Component:
   - component: {fileID: 537821003}
   - component: {fileID: 537821002}
+  - component: {fileID: 537821004}
+  - component: {fileID: 537821006}
+  - component: {fileID: 537821005}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1007,6 +1010,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &537821004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537821001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88910548c55fba245a074151c573ecd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives:
+  - {fileID: 1437420655}
+--- !u!114 &537821005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537821001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c68effe15ad4f4281ce5e2818f8257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 349478792}
+--- !u!114 &537821006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537821001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532c53d82ed944149a445f41b68c3e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpText: {fileID: 1595977186}
 --- !u!1 &567119133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a13038c8ff827e489f67ddbbf5af19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1153289633}
+  manager: {fileID: 0}
   healthChange: 10
 --- !u!114 &820326810
 MonoBehaviour:
@@ -1529,7 +1572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a13038c8ff827e489f67ddbbf5af19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1153289633}
+  manager: {fileID: 0}
   healthChange: -10
 --- !u!114 &1007241690
 MonoBehaviour:
@@ -1543,7 +1586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c102bee7c95b3841836fe03038e2f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1153289633}
+  manager: {fileID: 0}
   xp: 20
 --- !u!114 &1007241691
 MonoBehaviour:
@@ -1590,65 +1633,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1153289633
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1153289635}
-  - component: {fileID: 1153289637}
-  - component: {fileID: 1153289636}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1153289635
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153289633}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.812608, y: 3.4461398, z: 5.5040655}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1153289636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153289633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 532c53d82ed944149a445f41b68c3e90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xpText: {fileID: 1595977186}
---- !u!114 &1153289637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153289633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c68effe15ad4f4281ce5e2818f8257, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 349478792}
 --- !u!1 &1341319203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +1780,7 @@ GameObject:
   - component: {fileID: 1437420652}
   - component: {fileID: 1437420651}
   - component: {fileID: 1437420650}
+  - component: {fileID: 1437420655}
   m_Layer: 0
   m_Name: WallDropPoint
   m_TagString: Untagged
@@ -1903,6 +1888,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1437420655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437420649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6110f89aa1b2dfb41b4a333b770d221f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveName: Move Wall
+  completed: 0
+  active: 1
 --- !u!1 &1595977184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,6 +2154,7 @@ GameObject:
   - component: {fileID: 1877958217}
   - component: {fileID: 1877958216}
   - component: {fileID: 1877958215}
+  - component: {fileID: 1877958218}
   m_Layer: 0
   m_Name: WallBehavior
   m_TagString: Untagged
@@ -2188,7 +2189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a13038c8ff827e489f67ddbbf5af19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1153289633}
+  manager: {fileID: 537821001}
   healthChange: -10
 --- !u!114 &1877958216
 MonoBehaviour:
@@ -2202,7 +2203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c102bee7c95b3841836fe03038e2f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1153289633}
+  manager: {fileID: 537821001}
   xp: 20
 --- !u!114 &1877958217
 MonoBehaviour:
@@ -2218,6 +2219,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 640921339}
   objectToMove: {fileID: 647565791}
+--- !u!114 &1877958218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877958213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4042d542c63ebbf43a7c195e7f604f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objective: {fileID: 1437420655}
 --- !u!1 &1895537847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,7 +2551,6 @@ MeshFilter:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 537821003}
   - {fileID: 1941210646}
   - {fileID: 206730872}
   - {fileID: 483050642}
@@ -2548,5 +2561,5 @@ SceneRoots:
   - {fileID: 647565796}
   - {fileID: 640921339}
   - {fileID: 1044607109}
-  - {fileID: 1153289635}
   - {fileID: 590590137}
+  - {fileID: 537821003}
