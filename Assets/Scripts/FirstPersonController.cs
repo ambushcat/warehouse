@@ -12,6 +12,9 @@ public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
 
+    private GameObject objectivePaper;
+    private bool paperIsVisible = false;
+
     #region Camera Movement Variables
 
     public Camera playerCamera;
@@ -129,6 +132,10 @@ public class FirstPersonController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
+        GameObject mainCamera = joint.transform.GetChild(0).gameObject;
+        objectivePaper = mainCamera.transform.GetChild(0).gameObject;
+        objectivePaper.SetActive(false);
+
         crosshairObject = GetComponentInChildren<Image>();
 
         // Set internal variables
@@ -145,6 +152,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
+
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -356,6 +364,18 @@ public class FirstPersonController : MonoBehaviour
         {
             HeadBob();
         }
+
+        #region open objective paper
+        if (Input.GetKeyDown("p")) {
+            if (paperIsVisible) {
+                paperIsVisible = false;
+                objectivePaper.SetActive(false);
+            } else {
+                paperIsVisible = true;
+                objectivePaper.SetActive(true);
+            }
+        }
+        #endregion
     }
 
     void FixedUpdate()
