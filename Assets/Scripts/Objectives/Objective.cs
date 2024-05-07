@@ -11,7 +11,7 @@ public class Objective : MonoBehaviour
     public bool completed = false;
 
     [SerializeField]
-    public bool active = false;
+    public bool shouldBeDone = false;
     [SerializeField]
     public bool isBlinking = false;
 
@@ -19,12 +19,12 @@ public class Objective : MonoBehaviour
     public void Complete()
     {
         completed = true;
-        active = false;
+        shouldBeDone = false;
     }
 
     public void SetActive()
     {
-        active = true;
+        shouldBeDone = true;
     }
 
 
@@ -40,7 +40,7 @@ public class Objective : MonoBehaviour
 
     public void Blink()
     {
-        if (active)
+        if (shouldBeDone)
         {
             if (gameObject.GetComponent<MeshRenderer>() != null)
             {

@@ -6,6 +6,7 @@ public class ObjectiveSystem : MonoBehaviour
     [SerializeField]
     public Objective[] objectives;
     public TMP_Text text;
+    private Objective currentObjective;
 
     void Update()
     {
@@ -28,9 +29,10 @@ public class ObjectiveSystem : MonoBehaviour
     {
         foreach (var obj in objectives)
         {
-            if (obj.name == objective.name)
+            if (currentObjective.name == objective.name)
             {
                 obj.Complete();
+                currentObjective = null;
                 LoadObjectivesText();
             }
         }
@@ -43,6 +45,12 @@ public class ObjectiveSystem : MonoBehaviour
         {
             if (!obj.completed)
             {
+                if(currentObjective == null)
+                {
+                    currentObjective = obj;
+                    obj.SetActive();
+                }
+
                 text.text = text.text + obj.objectiveName + "\n";
             }
         }
