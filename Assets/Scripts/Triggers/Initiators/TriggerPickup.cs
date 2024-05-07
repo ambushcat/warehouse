@@ -6,8 +6,6 @@ public class TriggerPickup : MonoBehaviour
 {
     [SerializeField]
     public GameObject triggerObject;
-    [SerializeField]
-    public GameObject grabbableObject;
     private Objective objective;
 
     private void Start()
@@ -19,7 +17,7 @@ public class TriggerPickup : MonoBehaviour
     {
         if (objective.shouldBeDone)
         {
-            GrabbableObject x = grabbableObject.GetComponent<GrabbableObject>();
+            GrabbableObject x = gameObject.GetComponent<GrabbableObject>();
             if (x)
             {
                 if (x.isBeingGrabbed())
