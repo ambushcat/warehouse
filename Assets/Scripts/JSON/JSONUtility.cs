@@ -1,19 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class JSONUtility : MonoBehaviour
 {
-    [SerializeField] private TextAsset[] wordlists;
+    [SerializeField] public TextAsset[] wordlists;
     [SerializeField] private GameObject[] wordAssetPrefabs;
 
     private Dictionary<string, GameObject> wordAssetMap;
 
+    public static JSONUtility instance;
+
     private void Awake()
     {
         wordAssetMap = new Dictionary<string, GameObject>();
-        BuildWordAssetMap();
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        } else {
+            Destroy(gameObject);
+        }
+        //BuildWordAssetMap();
     }
 
     private void BuildWordAssetMap()

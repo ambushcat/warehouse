@@ -1,31 +1,12 @@
-{
-    "list": [
-        {
-            "translation":"Werkplek"
-        },
-        {
-            "translation":"Kantine"
-        },
-        {
-            "translation":"Pauze"
-        },
-        {
-            "translation":"Werktijden"
-        },
-        {
-            "translation":"Inklokken"
-        },
-        {
-            "translation":"Uitklokken"
-        },
-        {
-            "translation":"Vloer"
-        },
-        {
-            "translation":"Kleding"
-        },
-        {
-            "translation":"Collega"
-        }
-    ]
-}
+
+[
+"Werkplek",
+"Kantine",
+"Pauze",
+"Werktijden",
+"Inklokken",
+"Uitklokken",
+"Vloer",
+"Kleding",
+"Collega"
+]
