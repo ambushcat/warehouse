@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
@@ -15,9 +16,9 @@ public class PageBuilder : MonoBehaviour
         // Loop through the word list
         foreach (string word in wordList)
         {
-            Debug.Log(word);
+            int index = wordList.IndexOf(word) + 1;
             // Set the text of the TextMesh
-            gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text += word + '\n';
+            gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text +=  index + ". " + word + '\n';
 
             // Parent the TextMesh to the paper GameObject
             gameObject.transform.parent = gameObject.transform;
