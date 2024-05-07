@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json;
+
 
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
     using System.Net;
 #endif
 
@@ -152,7 +154,6 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
-
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
