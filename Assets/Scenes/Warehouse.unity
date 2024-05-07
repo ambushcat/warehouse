@@ -1918,7 +1918,7 @@ Transform:
   m_GameObject: {fileID: 91865717}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: 17.67, z: -11.89}
+  m_LocalPosition: {x: 12.5, y: 17.67, z: -11.89}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13609,7 +13609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25566c194f2a0040959225ac07dfd1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToDestroy: {fileID: 0}
+  objectToDestroy: {fileID: 91865717}
 --- !u!114 &536971784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48861,7 +48861,7 @@ MonoBehaviour:
   grabPoint: {fileID: 881438346}
   pickupLayer:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   pickupDistance: 2
 --- !u!4 &2042489995
 Transform:

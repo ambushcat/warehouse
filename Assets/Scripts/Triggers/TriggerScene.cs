@@ -7,6 +7,6 @@ public class TriggerScene : MonoBehaviour, ITriggerableObject
     public string sceneName;
     public void Trigger()
     {
-       SceneManager.LoadScene(sceneName:sceneName);
+       SceneManager.LoadSceneAsync(sceneName:sceneName, LoadSceneMode.Single);
     }
 }
