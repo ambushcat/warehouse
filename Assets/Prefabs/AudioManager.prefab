@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be2e71a90bd8b84d8ea0d4f5cd25880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  ServiceLocator: {fileID: 11400000, guid: 6f8e0059a48a84349ba950b15a341822, type: 2}
+  audioSource: {fileID: 4814767245192417768}
   mainMenuMusic: {fileID: 8300000, guid: 431b236c62e242d4a8c184e835f5410d, type: 3}
 --- !u!82 &4814767245192417768
 AudioSource:
