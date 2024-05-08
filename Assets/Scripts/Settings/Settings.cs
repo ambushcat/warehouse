@@ -7,7 +7,7 @@ namespace Assets.Scripts.Settings
 {
     public class Settings : MonoBehaviour
     {
-        public Slider slider;
+        [SerializeField] Slider slider;
         public string mainMenuSceneName;
         public ServiceLocator serviceLoactor;
 
@@ -16,14 +16,22 @@ namespace Assets.Scripts.Settings
             slider.value = serviceLoactor.GetAudioManager().Volume;
         }
 
+        private void save()
+        {
+            PlayerPrefs.SetFloat("Volume", slider.value);
+        }
+
         public void SetVolume(float value)
         {
+            slider.value = value;
             serviceLoactor.GetAudioManager().Volume = value;
+            save();
         }
 
         public void BackToMainMenu()
         {
             SceneManager.LoadScene(mainMenuSceneName);
         }
+        
     }
 }
