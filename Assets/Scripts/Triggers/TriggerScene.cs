@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TriggerScene : MonoBehaviour, ITriggerableObject
+public class TriggerActive : MonoBehaviour, ITriggerableObject
 {
     [SerializeField]
-    public string sceneName;
+    public  GameObject x;
     public void Trigger()
     {
-       SceneManager.LoadSceneAsync(sceneName:sceneName, LoadSceneMode.Single);
+       x.SetActive(true);
     }
 }
