@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json;
+
 
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
     using System.Net;
 #endif
 
 public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
+
+    private GameObject objectivePaper;
+    private bool paperIsVisible = false;
 
     #region Camera Movement Variables
 
@@ -128,6 +133,10 @@ public class FirstPersonController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        GameObject mainCamera = joint.transform.GetChild(0).gameObject;
+        objectivePaper = mainCamera.transform.GetChild(0).gameObject;
+        objectivePaper.SetActive(false);
 
         crosshairObject = GetComponentInChildren<Image>();
 
@@ -356,6 +365,18 @@ public class FirstPersonController : MonoBehaviour
         {
             HeadBob();
         }
+
+        #region open objective paper
+        if (Input.GetKeyDown("p")) {
+            if (paperIsVisible) {
+                paperIsVisible = false;
+                objectivePaper.SetActive(false);
+            } else {
+                paperIsVisible = true;
+                objectivePaper.SetActive(true);
+            }
+        }
+        #endregion
     }
 
     void FixedUpdate()

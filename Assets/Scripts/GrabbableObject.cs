@@ -7,6 +7,7 @@ public class GrabbableObject : MonoBehaviour
     private Rigidbody rb;
     private Transform grabPoint;
     private float lerpSpeed = 10f;
+    private bool isGrabbed = false;
 
     private void Awake()
     {
@@ -16,12 +17,14 @@ public class GrabbableObject : MonoBehaviour
     {
         this.grabPoint = grabPoint;
         rb.useGravity = false;
+        isGrabbed = true;
     }
 
     public void Drop()
     {
         grabPoint = null;
         rb.useGravity = true;
+        isGrabbed = false;
     }
 
     private void FixedUpdate()
@@ -31,5 +34,10 @@ public class GrabbableObject : MonoBehaviour
             Vector3 newPos = Vector3.Lerp(transform.position, grabPoint.position, Time.deltaTime * lerpSpeed);
             rb.MovePosition(newPos);
         }
+    }
+
+    public bool isBeingGrabbed()
+    {
+        return isGrabbed;
     }
 }
