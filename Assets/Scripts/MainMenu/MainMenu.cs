@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Scripts.Services;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public string gameSceneName;
+    public string settingsSceneName;
+    public ServiceLocator serviceLocator;
 
     private void Start()
     {
-        AudioManager.Instance.PlayBackgroundMusic();
+        serviceLocator.GetAudioManager().PlayBackgroundMusic();
     }
 
     public void Play()
