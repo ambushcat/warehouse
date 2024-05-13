@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3b87cb2c6871e48a94bb10fc914d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: SampleScene
+  gameSceneName: CompleteScreenDemo
   settingsSceneName: Settings
   serviceLocator: {fileID: 11400000, guid: 6f8e0059a48a84349ba950b15a341822, type: 2}
 --- !u!1 &262676355
@@ -2217,6 +2217,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1612870403}
     m_Modifications:
+    - target: {fileID: 2856863035142497198, guid: 584602484d5f12248bd91fe458e6776f, type: 3}
+      propertyPath: m_isPreferredWidthDirty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856863035142497198, guid: 584602484d5f12248bd91fe458e6776f, type: 3}
+      propertyPath: m_AutoSizeIterationCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856863035142497198, guid: 584602484d5f12248bd91fe458e6776f, type: 3}
+      propertyPath: m_isPreferredHeightDirty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5375175873184975059, guid: 584602484d5f12248bd91fe458e6776f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
