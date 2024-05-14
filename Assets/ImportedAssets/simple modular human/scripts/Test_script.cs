@@ -44,13 +44,13 @@ public class Test_script : MonoBehaviour
     void Start()
     {
 
-        /*agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
 
-        sitting_position = new Vector3(0,0,0);
-        sitting_Rotation = new Vector3(180,-90,-90);
+        sitting_position = new Vector3(0, 0, 0);
+        sitting_Rotation = new Vector3(180, -90, -90);
 
-        stealing_position = new Vector3(0,0.04185915f,-0.07200003f);
-        stealing_Rotation = new Vector3(0,180,0);
+        stealing_position = new Vector3(0, 0.04185915f, -0.07200003f);
+        stealing_Rotation = new Vector3(0, 180, 0);
 
         way_points.Clear();
         Sitting_points.Clear();
@@ -62,7 +62,7 @@ public class Test_script : MonoBehaviour
         GameObject[] stealingpointsFind = GameObject.FindGameObjectsWithTag("stealingpoint");
         GameObject[] pick_up_pointsFind = GameObject.FindGameObjectsWithTag("pickuppoint");
 
-        foreach(GameObject g in waypointsFind)
+        foreach (GameObject g in waypointsFind)
         {
             way_points.Add(g);
         }
@@ -77,7 +77,7 @@ public class Test_script : MonoBehaviour
         foreach (GameObject g in pick_up_pointsFind)
         {
             pick_up_points.Add(g);
-        }*/
+        }
         ani.SetInteger("legs", 5);
         ani.SetInteger("arms", 5);
 
@@ -93,14 +93,14 @@ public class Test_script : MonoBehaviour
 
     public GameObject crowbar;
 
-    /*IEnumerator sitting_down ()
+    IEnumerator sitting_down()
     {
         yield return new WaitForSeconds(0);
 
         transform.parent = aim_point.transform;
-       
 
-      
+
+
 
         Destroy(agent);
 
@@ -114,7 +114,7 @@ public class Test_script : MonoBehaviour
 
         yield return new WaitForSeconds(5);
 
-        agent =  gameObject.AddComponent<NavMeshAgent>();
+        agent = gameObject.AddComponent<NavMeshAgent>();
 
 
         in_sitting = false;
@@ -160,7 +160,7 @@ public class Test_script : MonoBehaviour
 
         in_pickup = false;
         destermine_new_aim = false;
-        
+
 
         StopCoroutine(pickup_start);
     }
@@ -170,17 +170,17 @@ public class Test_script : MonoBehaviour
     void Update()
     {
 
-        if(!ready)
+        if (!ready)
         {
             return;
         }
 
-     
-        if(!destermine_new_aim)
+
+        if (!destermine_new_aim)
         {
             int what_to_choose = UnityEngine.Random.Range(0, 5);
 
-           
+
 
             walk = false;
             run = false;
@@ -190,7 +190,7 @@ public class Test_script : MonoBehaviour
 
 
 
-            if(what_to_choose == 0)
+            if (what_to_choose == 0)
             {
                 walk = true;
 
@@ -198,11 +198,11 @@ public class Test_script : MonoBehaviour
                 aim_point = way_points[Which_point].gameObject;
                 destermine_new_aim = true;
             }
-            if (what_to_choose == 1)
+            /*if (what_to_choose == 1)
             {
                 run = true;
 
-                int Which_point = UnityEngine.Random.Range(0, way_points.Count );
+                int Which_point = UnityEngine.Random.Range(0, way_points.Count);
                 aim_point = way_points[Which_point].gameObject;
                 destermine_new_aim = true;
             }
@@ -210,7 +210,7 @@ public class Test_script : MonoBehaviour
             {
                 sit = true;
 
-                int Which_point = UnityEngine.Random.Range(0, Sitting_points.Count );
+                int Which_point = UnityEngine.Random.Range(0, Sitting_points.Count);
                 aim_point = Sitting_points[Which_point].gameObject;
                 destermine_new_aim = true;
             }
@@ -218,7 +218,7 @@ public class Test_script : MonoBehaviour
             {
                 steal = true;
 
-                int Which_point = UnityEngine.Random.Range(0, Stealing_points.Count );
+                int Which_point = UnityEngine.Random.Range(0, Stealing_points.Count);
                 aim_point = Stealing_points[Which_point].gameObject;
                 destermine_new_aim = true;
             }
@@ -226,10 +226,10 @@ public class Test_script : MonoBehaviour
             {
                 pick_up = true;
 
-                int Which_point = UnityEngine.Random.Range(0, pick_up_points.Count );
+                int Which_point = UnityEngine.Random.Range(0, pick_up_points.Count);
                 aim_point = pick_up_points[Which_point].gameObject;
                 destermine_new_aim = true;
-            }
+            }*/
 
         }
         if (destermine_new_aim)
@@ -237,9 +237,9 @@ public class Test_script : MonoBehaviour
             if (walk)
             {
 
-                if (Vector3.Distance(transform.position,aim_point.transform.position) > 0.25f)
+                if (Vector3.Distance(transform.position, aim_point.transform.position) > 0.25f)
                 {
-                   
+
                     agent.speed = walk_speed;
                     agent.SetDestination(aim_point.transform.position);
                     ani.SetInteger("arms", 1);
@@ -257,7 +257,7 @@ public class Test_script : MonoBehaviour
                 }
 
             }
-            if(run)
+            /*if (run)
             {
 
                 if (Vector3.Distance(transform.position, aim_point.transform.position) > 0.25f)
@@ -279,13 +279,13 @@ public class Test_script : MonoBehaviour
                     destermine_new_aim = false;
                 }
 
-            }
-            if(sit && !in_sitting)
+            }*/
+           /* if (sit && !in_sitting)
             {
 
                 if (Vector3.Distance(transform.position, aim_point.transform.position) > 0.25f)
                 {
-                    
+
                     agent.speed = walk_speed;
                     agent.SetDestination(aim_point.transform.position);
                     ani.SetInteger("arms", 1);
@@ -297,7 +297,7 @@ public class Test_script : MonoBehaviour
                     agent.speed = 0;
 
 
-                    if(!in_sitting)
+                    if (!in_sitting)
                     {
                         in_sitting = true;
 
@@ -307,12 +307,12 @@ public class Test_script : MonoBehaviour
                 }
 
             }
-            if(steal && !in_stealing)
+            if (steal && !in_stealing)
             {
 
                 if (Vector3.Distance(transform.position, aim_point.transform.position) > 0.25f)
                 {
-                 
+
                     agent.speed = walk_speed;
                     agent.SetDestination(aim_point.transform.position);
                     ani.SetInteger("arms", 1);
@@ -323,7 +323,7 @@ public class Test_script : MonoBehaviour
                 {
                     agent.speed = 0;
 
-                 
+
 
                     if (!in_stealing)
                     {
@@ -336,11 +336,11 @@ public class Test_script : MonoBehaviour
 
 
             }
-            if(pick_up && !in_pickup)
+            if (pick_up && !in_pickup)
             {
                 if (Vector3.Distance(transform.position, aim_point.transform.position) > 0.25f)
                 {
-                    
+
                     agent.speed = walk_speed;
                     agent.SetDestination(aim_point.transform.position);
                     ani.SetInteger("arms", 1);
@@ -351,7 +351,7 @@ public class Test_script : MonoBehaviour
                 {
                     agent.speed = 0;
 
-                   
+
 
                     if (!in_pickup)
                     {
@@ -361,20 +361,20 @@ public class Test_script : MonoBehaviour
                     }
 
                 }
-            }
+            }*/
 
 
         }
 
 
-        
 
 
 
 
 
 
-    }*/
+
+    }
 
 
 

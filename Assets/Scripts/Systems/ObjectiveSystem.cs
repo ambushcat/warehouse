@@ -40,7 +40,12 @@ public class ObjectiveSystem : MonoBehaviour
 
     void LoadObjectivesText()
     {
-        text.text = "Objectives \n";
+        FontStyles currentStyle = text.fontStyle;
+        text.fontStyle = FontStyles.Bold;
+        text.text = "OBJECTIVES: \n";
+        text.fontStyle = currentStyle;
+
+
         foreach (var obj in objectives)
         {
             if (!obj.completed)
