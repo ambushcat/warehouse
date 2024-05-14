@@ -1,6 +1,4 @@
-using MBS.View.Input.Physical;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TriggerActive : MonoBehaviour, ITriggerableObject
 {
