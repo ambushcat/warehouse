@@ -40,7 +40,7 @@ public class Objective : MonoBehaviour
 
     public void Blink()
     {
-        if (shouldBeDone)
+       /* if (shouldBeDone)
         {
             if (gameObject.GetComponent<MeshRenderer>() != null)
             {
@@ -57,6 +57,6 @@ public class Objective : MonoBehaviour
                 gameObject.GetComponent<MeshRenderer>().material.color = lerpColorWhite;
             }
 
-        }
+        }*/
     }
 }
