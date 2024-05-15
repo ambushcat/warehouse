@@ -53,30 +53,13 @@ public class Test_script : MonoBehaviour
         stealing_Rotation = new Vector3(0, 180, 0);
 
         way_points.Clear();
-        Sitting_points.Clear();
-        Stealing_points.Clear();
-        pick_up_points.Clear();
-
+        
         GameObject[] waypointsFind = GameObject.FindGameObjectsWithTag("waypoint");
-        GameObject[] SittingpointsFind = GameObject.FindGameObjectsWithTag("sittingpoint");
-        GameObject[] stealingpointsFind = GameObject.FindGameObjectsWithTag("stealingpoint");
-        GameObject[] pick_up_pointsFind = GameObject.FindGameObjectsWithTag("pickuppoint");
+        
 
         foreach (GameObject g in waypointsFind)
         {
             way_points.Add(g);
-        }
-        foreach (GameObject g in SittingpointsFind)
-        {
-            Sitting_points.Add(g);
-        }
-        foreach (GameObject g in stealingpointsFind)
-        {
-            Stealing_points.Add(g);
-        }
-        foreach (GameObject g in pick_up_pointsFind)
-        {
-            pick_up_points.Add(g);
         }
         ani.SetInteger("legs", 5);
         ani.SetInteger("arms", 5);
@@ -178,17 +161,7 @@ public class Test_script : MonoBehaviour
 
         if (!destermine_new_aim)
         {
-            int what_to_choose = UnityEngine.Random.Range(0, 5);
-
-
-
-            walk = false;
-            run = false;
-            sit = false;
-            steal = false;
-            pick_up = false;
-
-
+            int what_to_choose = 0;
 
             if (what_to_choose == 0)
             {
@@ -380,9 +353,6 @@ public class Test_script : MonoBehaviour
 
 
     public List<GameObject> way_points = new List<GameObject>();
-    public List<GameObject> Sitting_points = new List<GameObject>();
-    public List<GameObject> Stealing_points = new List<GameObject>();
-    public List<GameObject> pick_up_points = new List<GameObject>();
 
   
 
