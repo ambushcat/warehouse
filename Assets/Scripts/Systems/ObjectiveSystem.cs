@@ -7,6 +7,7 @@ public class ObjectiveSystem : MonoBehaviour
     public Objective[] objectives;
     public TMP_Text text;
     private Objective currentObjective;
+    public ObjectiveWaypoint waypoint;
 
     void Update()
     {
@@ -50,9 +51,10 @@ public class ObjectiveSystem : MonoBehaviour
         {
             if (!obj.completed)
             {
-                if(currentObjective == null)
+                if (currentObjective == null)
                 {
                     currentObjective = obj;
+                    waypoint.target = currentObjective.transform;
                     obj.SetActive();
                 }
 
@@ -60,4 +62,5 @@ public class ObjectiveSystem : MonoBehaviour
             }
         }
     }
+
 }

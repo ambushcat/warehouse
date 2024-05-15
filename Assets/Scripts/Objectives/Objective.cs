@@ -40,23 +40,23 @@ public class Objective : MonoBehaviour
 
     public void Blink()
     {
-       /* if (shouldBeDone)
-        {
-            if (gameObject.GetComponent<MeshRenderer>() != null)
-            {
-                Color lerpColorRed = Color.Lerp(Color.white, Color.red, Time.time);
-                gameObject.GetComponent<MeshRenderer>().material.color = lerpColorRed;
-            }
+        /* if (shouldBeDone)
+         {
+             if (gameObject.GetComponent<MeshRenderer>() != null)
+             {
+                 Color lerpColorRed = Color.Lerp(Color.white, Color.red, Time.time);
+                 gameObject.GetComponent<MeshRenderer>().material.color = lerpColorRed;
+             }
 
-        }
-        else
-        {
-            if (gameObject.GetComponent<MeshRenderer>() != null)
-            {
-                Color lerpColorWhite = Color.Lerp(Color.red, Color.white, Time.time);
-                gameObject.GetComponent<MeshRenderer>().material.color = lerpColorWhite;
-            }
+         }
+         else
+         {
+             if (gameObject.GetComponent<MeshRenderer>() != null)
+             {
+                 Color lerpColorWhite = Color.Lerp(Color.red, Color.white, Time.time);
+                 gameObject.GetComponent<MeshRenderer>().material.color = lerpColorWhite;
+             }
 
-        }*/
+         }*/
     }
 }
