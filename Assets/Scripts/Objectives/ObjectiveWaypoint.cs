@@ -3,11 +3,30 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 public class ObjectiveWaypoint : MonoBehaviour
 {
     public Image img;
-    public Transform target;
     public TMP_Text meter;
+    public Transform target;
+
+    void Start()
+    {
+        ObjectiveSystem.OnObjectiveLocationChanged += UpdateWaypointLocation;
+    }
+
+    void UpdateWaypointLocation(Transform x)
+    {
+        if (x != null)
+        {
+            target = x;
+        }
+    }
+
+    void OnDestroy()
+    {
+        ObjectiveSystem.OnObjectiveLocationChanged -= UpdateWaypointLocation;
+    }
 
     void Update()
     {

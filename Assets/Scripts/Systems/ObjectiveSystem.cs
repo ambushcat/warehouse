@@ -7,7 +7,8 @@ public class ObjectiveSystem : MonoBehaviour
     public Objective[] objectives;
     public TMP_Text text;
     private Objective currentObjective;
-    public ObjectiveWaypoint waypoint;
+    public delegate void ObjectiveLocationChanged(Transform newLocation);
+    public static event ObjectiveLocationChanged OnObjectiveLocationChanged;
 
     void Update()
     {
@@ -54,13 +55,11 @@ public class ObjectiveSystem : MonoBehaviour
                 if (currentObjective == null)
                 {
                     currentObjective = obj;
-                    waypoint.target = currentObjective.transform;
-                    obj.SetActive();
+                    OnObjectiveLocationChanged?.Invoke(currentObjective.transform);
+                    obj.SetActive();                    
                 }
-
                 text.text = text.text + obj.objectiveName + "\n";
             }
         }
     }
-
 }
