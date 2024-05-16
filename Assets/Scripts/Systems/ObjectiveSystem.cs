@@ -7,6 +7,8 @@ public class ObjectiveSystem : MonoBehaviour
     public Objective[] objectives;
     public TMP_Text text;
     private Objective currentObjective;
+    public delegate void ObjectiveLocationChanged(Transform newLocation);
+    public static event ObjectiveLocationChanged OnObjectiveLocationChanged;
 
     void Update()
     {
@@ -40,17 +42,22 @@ public class ObjectiveSystem : MonoBehaviour
 
     void LoadObjectivesText()
     {
-        text.text = "Objectives \n";
+        FontStyles currentStyle = text.fontStyle;
+        text.fontStyle = FontStyles.Bold;
+        text.text = "OBJECTIVES: \n";
+        text.fontStyle = currentStyle;
+
+
         foreach (var obj in objectives)
         {
             if (!obj.completed)
             {
-                if(currentObjective == null)
+                if (currentObjective == null)
                 {
                     currentObjective = obj;
-                    obj.SetActive();
+                    OnObjectiveLocationChanged?.Invoke(currentObjective.transform);
+                    obj.SetActive();                    
                 }
-
                 text.text = text.text + obj.objectiveName + "\n";
             }
         }
