@@ -17,22 +17,23 @@ public class TriggerPoint : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (objective.shouldBeDone)
+        if (objective != null && !objective.shouldBeDone)
         {
-            if (isColliderEnabled)
-            {
-                if (collision.gameObject.tag == initiator.tag)
-                {
-                    ITriggerableObject[] triggerComponents = triggerObject.GetComponents<ITriggerableObject>();
-                    foreach (var triggerComponent in triggerComponents)
-                    {
-                        triggerComponent.Trigger();
-                    }
-                    isColliderEnabled = false;
-                }
-            }
+            return;
         }
 
+        if (isColliderEnabled)
+        {
+            if (collision.gameObject.tag == initiator.tag)
+            {
+                ITriggerableObject[] triggerComponents = triggerObject.GetComponents<ITriggerableObject>();
+                foreach (var triggerComponent in triggerComponents)
+                {
+                    triggerComponent.Trigger();
+                }
+                isColliderEnabled = false;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
