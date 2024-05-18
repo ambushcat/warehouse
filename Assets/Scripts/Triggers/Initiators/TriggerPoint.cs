@@ -38,15 +38,17 @@ public class TriggerPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (objective.shouldBeDone)
+        if (objective != null && !objective.shouldBeDone)
         {
-            if (collider.gameObject.tag == initiator.tag)
+            return;
+        }
+
+        if (collider.gameObject.tag == initiator.tag)
+        {
+            ITriggerableObject[] triggerComponents = triggerObject.GetComponents<ITriggerableObject>();
+            foreach (var triggerComponent in triggerComponents)
             {
-                ITriggerableObject[] triggerComponents = triggerObject.GetComponents<ITriggerableObject>();
-                foreach (var triggerComponent in triggerComponents)
-                {
-                    triggerComponent.Trigger();
-                }
+                triggerComponent.Trigger();
             }
         }
     }
