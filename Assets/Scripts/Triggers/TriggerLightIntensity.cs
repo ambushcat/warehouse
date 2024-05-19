@@ -3,12 +3,12 @@ using UnityEngine;
 public class TriggerLightIntensity : MonoBehaviour, ITriggerableObject
 {
     [SerializeField]
-    Light directionalLight;
+    ReflectionProbe reflectionProbe;
     [SerializeField]
     float intensity;
 
     public void Trigger()
     {
-        directionalLight.intensity = intensity;
+        reflectionProbe.intensity = intensity;
     }
 }
