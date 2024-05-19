@@ -20,9 +20,12 @@ public class TriggerMovement : MonoBehaviour, ITriggerableObject
         if (isTriggered)
         {
             objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, targetPosition.position, Time.deltaTime * speed);
-            if(objectToMove.transform.position == targetPosition.position)
+            objectToMove.transform.rotation = Quaternion.RotateTowards(objectToMove.transform.rotation, targetPosition.rotation, Time.deltaTime * speed);
+
+            if (objectToMove.transform.position == targetPosition.position)
             {
-                isTriggered=false;
+
+                isTriggered = false;
             }
         }
     }
