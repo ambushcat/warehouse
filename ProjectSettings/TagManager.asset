@@ -4,19 +4,25 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ball
+  - Carpet
+  - Glass
+  - MetalHeavy
+  - MetalLight
+  - Rubber
+  - BuddyBot
+  - HUD
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - DynamicObjects
+  - LightingHidden
+  - PostProcessing
   - 
   - 
   - 
