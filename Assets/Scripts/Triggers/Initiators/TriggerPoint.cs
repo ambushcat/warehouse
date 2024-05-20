@@ -17,35 +17,38 @@ public class TriggerPoint : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (objective.shouldBeDone)
+        if (objective != null && !objective.shouldBeDone)
         {
-            if (isColliderEnabled)
-            {
-                if (collision.gameObject.tag == initiator.tag)
-                {
-                    ITriggerableObject[] triggerComponents = triggerObject.GetComponents<ITriggerableObject>();
-                    foreach (var triggerComponent in triggerComponents)
-                    {
-                        triggerComponent.Trigger();
-                    }
-                    isColliderEnabled = false;
-                }
-            }
+            return;
         }
 
-    }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (objective.shouldBeDone)
+        if (isColliderEnabled)
         {
-            if (collider.gameObject.tag == initiator.tag)
+            if (collision.gameObject.tag == initiator.tag)
             {
                 ITriggerableObject[] triggerComponents = triggerObject.GetComponents<ITriggerableObject>();
                 foreach (var triggerComponent in triggerComponents)
                 {
                     triggerComponent.Trigger();
                 }
+                isColliderEnabled = false;
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (objective != null && !objective.shouldBeDone)
+        {
+            return;
+        }
+
+        if (collider.gameObject.tag == initiator.tag)
+        {
+            ITriggerableObject[] triggerComponents = triggerObject.GetComponents<ITriggerableObject>();
+            foreach (var triggerComponent in triggerComponents)
+            {
+                triggerComponent.Trigger();
             }
         }
     }

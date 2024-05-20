@@ -10,18 +10,6 @@ public class ObjectiveSystem : MonoBehaviour
     public delegate void ObjectiveLocationChanged(Transform newLocation);
     public static event ObjectiveLocationChanged OnObjectiveLocationChanged;
 
-    void Update()
-    {
-
-        foreach (var obj in objectives)
-        {
-            if (obj.enabled)
-            {
-                obj.Blink();
-            }
-        }
-    }
-
     private void Start()
     {
         LoadObjectivesText();
@@ -35,6 +23,7 @@ public class ObjectiveSystem : MonoBehaviour
             {
                 obj.Complete();
                 currentObjective = null;
+                OnObjectiveLocationChanged?.Invoke(null);
                 LoadObjectivesText();
             }
         }

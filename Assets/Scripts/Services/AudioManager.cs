@@ -9,7 +9,7 @@ namespace Assets.Scripts.Services
         public AudioSource audioSource;
 
         public AudioClip mainMenuMusic;
-        //public AudioClip shootSoundEffect;
+        public AudioClip objectiveCompleted;
 
         private bool isMusicPlaying;
 
@@ -43,9 +43,9 @@ namespace Assets.Scripts.Services
 
         }
 
-        /*public void PlayShootSoundEffect()
+        public void PlayObjectiveCompleted()
         {
-            audioSource.PlayOneShot(shootSoundEffect);
-        }*/
+            audioSource.PlayOneShot(objectiveCompleted);
+        }
     }
 }

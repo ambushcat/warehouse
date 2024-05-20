@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7338897113546440952}
   - component: {fileID: 3698227707835635331}
   m_Layer: 0
-  m_Name: Carton_03
+  m_Name: CardboardBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
