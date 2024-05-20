@@ -4,6 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Carpet
+  - Glass
+  - MetalHeavy
+  - MetalLight
+  - Rubber
+  - BuddyBot
+  - HUD
   - Ball
   - waypoint
   - stealingpoint
@@ -12,14 +19,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - DynamicObjects
+  - LightingHidden
+  - PostProcessing
   - 
   - 
   - 
