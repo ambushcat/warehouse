@@ -11,6 +11,10 @@ TagManager:
   - Rubber
   - BuddyBot
   - HUD
+  - Ball
+  - waypoint
+  - stealingpoint
+  - orderpicking
   layers:
   - Default
   - TransparentFX

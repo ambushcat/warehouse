@@ -62,11 +62,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8508226129946384788, guid: 5fdcff74b2be16a4f82377211067a8f1, type: 3}
       propertyPath: m_text
-      value: 
+      value: Sample textSample textSample textSample textSample textSample textSample
+        textSample textSample text
       objectReference: {fileID: 0}
     - target: {fileID: 8508226129946384788, guid: 5fdcff74b2be16a4f82377211067a8f1, type: 3}
       propertyPath: m_fontSize
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508226129946384788, guid: 5fdcff74b2be16a4f82377211067a8f1, type: 3}
+      propertyPath: m_margin.z
+      value: 10.814954
       objectReference: {fileID: 0}
     - target: {fileID: 8508226129946384788, guid: 5fdcff74b2be16a4f82377211067a8f1, type: 3}
       propertyPath: m_fontSizeBase
